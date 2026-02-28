@@ -174,8 +174,8 @@ export default function Home() {
                 <span>Ifeoluwa Oluwafemi</span>
               </h2>
               <h3 className="text-xl md:text-3xl font-semibold text-[#8b6f47]">Backend Engineer</h3>
-              <p className="text-lg md:text-2xl text-[#8b6f47] max-w-2xl flex items-start gap-3">
-                <Cloud className="flex-shrink-0 mt-1" size={24} />
+              <p className="text-base md:text-xl text-[#8b6f47] max-w-2xl flex items-start gap-3">
+                <Cloud className="flex-shrink-0 mt-1" size={20} />
                 <span>Designing and developing high-volume, low-latency enterprise applications</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -256,10 +256,10 @@ export default function Home() {
             </div>
             <div className="text-center group cursor-default">
               <div className="flex justify-center mb-2">
-                <Database className="text-[#d4a574] group-hover:scale-125 transition-transform duration-300" size={36} />
+                <Blocks className="text-[#d4a574] group-hover:scale-125 transition-transform duration-300" size={36} />
               </div>
-              <div className="text-3xl font-bold text-[#d4a574]">1K+</div>
-              <div className="text-[#a0826d] text-sm">Followers</div>
+              <div className="text-3xl font-bold text-[#d4a574]">4+</div>
+              <div className="text-[#a0826d] text-sm">Tech Stacks</div>
             </div>
           </div>
         </div>
@@ -341,6 +341,22 @@ export default function Home() {
             <div className="border-l-2 border-[#8b6f47] pl-6 space-y-2 hover:border-[#d4a574] transition-colors duration-300 relative group">
               {/* Animated dot */}
               <div className="absolute -left-[9px] top-2 w-4 h-4 bg-[#8b6f47] rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+              <h4 className="text-2xl font-semibold text-[#d4a574]">Building Washay</h4>
+              <p className="text-[#8b6f47]">
+                <a href="https://washay.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#d4a574] transition-colors">
+                  Washay
+                </a>
+                {" "}• Feb 2025 - Present
+              </p>
+              <ul className="list-disc list-inside text-[#a0826d] space-y-2 mt-4">
+                <li>Building an operating system for African creators to create with confidence</li>
+                <li>Developing scalable backend infrastructure for creator monetization</li>
+                <li>Architecting systems to support content creators across Africa</li>
+              </ul>
+            </div>
+            <div className="border-l-2 border-[#8b6f47] pl-6 space-y-2 hover:border-[#d4a574] transition-colors duration-300 relative group">
+              {/* Animated dot */}
+              <div className="absolute -left-[9px] top-2 w-4 h-4 bg-[#8b6f47] rounded-full group-hover:scale-150 transition-transform duration-300"></div>
               <h4 className="text-2xl font-semibold text-[#d4a574]">Backend Engineer</h4>
               <p className="text-[#8b6f47]">PaveHQ • Apr 2023 - Present</p>
               <ul className="list-disc list-inside text-[#a0826d] space-y-2 mt-4">
@@ -408,21 +424,71 @@ export default function Home() {
             <h3 className="text-4xl font-bold text-[#d4a574]">Projects</h3>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-[#1a1512] border border-[#2d2520] rounded-lg p-6 hover:border-[#8b6f47] hover:scale-105 hover:shadow-lg hover:shadow-[#8b6f47]/20 transition-all duration-300">
+            {/* Dayfi */}
+            <a 
+              href="https://www.dayfi.co/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-[#1a1512] border border-[#2d2520] rounded-lg p-6 hover:border-[#8b6f47] hover:scale-105 hover:shadow-lg hover:shadow-[#8b6f47]/20 transition-all duration-300 group"
+            >
               <div className="flex items-center gap-3 mb-3">
-                <Database className="text-[#d4a574]" size={28} />
-                <h4 className="text-2xl font-semibold text-[#d4a574]">Inventory Management System</h4>
+                <Zap className="text-[#d4a574] group-hover:rotate-12 transition-transform" size={28} />
+                <h4 className="text-2xl font-semibold text-[#d4a574]">Dayfi</h4>
               </div>
               <p className="text-[#a0826d] mb-4">
-                Built procurement platform connecting wholesale and retail distributors, enabling price discovery 
-                and seamless stock replenishment for small businesses
+                Cross-border payment platform making money transfers across Africa fast, affordable, and accessible. 
+                Supporting family support, business payments, education fees, and investments with best exchange rates.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">☕ Java</span>
-                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🍃 Spring Boot</span>
-                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🍃 MongoDB</span>
+                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">💸 Fintech</span>
+                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🌍 Cross-border</span>
+                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">💰 Payments</span>
               </div>
-            </div>
+            </a>
+
+            {/* Tikket */}
+            <a 
+              href="https://usetikket.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-[#1a1512] border border-[#2d2520] rounded-lg p-6 hover:border-[#8b6f47] hover:scale-105 hover:shadow-lg hover:shadow-[#8b6f47]/20 transition-all duration-300 group"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <Rocket className="text-[#d4a574] group-hover:rotate-12 transition-transform" size={28} />
+                <h4 className="text-2xl font-semibold text-[#d4a574]">Tikket</h4>
+              </div>
+              <p className="text-[#a0826d] mb-4">
+                Event ticketing platform where users can discover exciting events or host their own. 
+                Seamless ticket purchasing experience with next-day payment for event hosts.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🎫 Ticketing</span>
+                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🎉 Events</span>
+                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">📱 Platform</span>
+              </div>
+            </a>
+
+            {/* TVET */}
+            <a 
+              href="https://www.tvet.education.gov.ng/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-[#1a1512] border border-[#2d2520] rounded-lg p-6 hover:border-[#8b6f47] hover:scale-105 hover:shadow-lg hover:shadow-[#8b6f47]/20 transition-all duration-300 group"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <Blocks className="text-[#d4a574] group-hover:rotate-12 transition-transform" size={28} />
+                <h4 className="text-2xl font-semibold text-[#d4a574]">FME TVET Initiative</h4>
+              </div>
+              <p className="text-[#a0826d] mb-4">
+                Federal Ministry of Education's Technical and Vocational Education and Training platform. 
+                Empowering Nigerian youth with technical skills and vocational training opportunities.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🎓 Education</span>
+                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🏛️ Government</span>
+                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">💼 Training</span>
+              </div>
+            </a>
             
             <div className="bg-[#1a1512] border border-[#2d2520] rounded-lg p-6 hover:border-[#8b6f47] hover:scale-105 hover:shadow-lg hover:shadow-[#8b6f47]/20 transition-all duration-300">
               <div className="flex items-center gap-3 mb-3">
@@ -437,38 +503,6 @@ export default function Home() {
                 <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">☕ Java</span>
                 <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">📊 MSSQL</span>
                 <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🔌 REST/SOAP</span>
-              </div>
-            </div>
-            
-            <div className="bg-[#1a1512] border border-[#2d2520] rounded-lg p-6 hover:border-[#8b6f47] hover:scale-105 hover:shadow-lg hover:shadow-[#8b6f47]/20 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-3">
-                <Zap className="text-[#d4a574]" size={28} />
-                <h4 className="text-2xl font-semibold text-[#d4a574]">Enterprise Applications</h4>
-              </div>
-              <p className="text-[#a0826d] mb-4">
-                Designed high-volume, low-latency applications for fin-tech, health-tech, and retail 
-                sectors using microservices architecture
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">⚡ JavaScript</span>
-                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🐈 NestJS</span>
-                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">☁️ Azure</span>
-              </div>
-            </div>
-            
-            <div className="bg-[#1a1512] border border-[#2d2520] rounded-lg p-6 hover:border-[#8b6f47] hover:scale-105 hover:shadow-lg hover:shadow-[#8b6f47]/20 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-3">
-                <Shield className="text-[#d4a574]" size={28} />
-                <h4 className="text-2xl font-semibold text-[#d4a574]">WTM Ethiopia Workshop</h4>
-              </div>
-              <p className="text-[#a0826d] mb-4">
-                Led workshop on Backend Development with Node.js and Express.js for Women Techmakers Ethiopia, 
-                teaching RESTful APIs and best practices
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">⬢ Node.js</span>
-                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🔌 Express.js</span>
-                <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">📚 Teaching</span>
               </div>
             </div>
           </div>
