@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Code2, Database, Server, GitBranch, Terminal, Blocks, Mail, Github, Linkedin, Rocket, Shield, Zap, Cloud, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Code2, Database, Server, GitBranch, Terminal, Blocks, Mail, Github, Linkedin, Rocket, Shield, Zap, Cloud, CheckCircle, AlertCircle, Video, Mic } from "lucide-react";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -54,13 +54,13 @@ export default function Home() {
       <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-sm border-b border-[#2d2520] z-50 animate-slide-in">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <Image src="/logo.svg" alt="techie:lady logo" width={40} height={40} className="hover:rotate-12 transition-transform duration-300" />
-            <h1 className="text-2xl font-bold text-[#d4a574]">techie:lady</h1>
+            <h1 className="text-2xl font-bold text-[#d4a574]">techie.lady()</h1>
           </div>
           <div className="flex gap-6 text-sm">
             <a href="#about" className="text-[#a0826d] hover:text-[#d4a574] hover:scale-110 transition-all duration-200">About</a>
             <a href="#experience" className="text-[#a0826d] hover:text-[#d4a574] hover:scale-110 transition-all duration-200">Experience</a>
             <a href="#projects" className="text-[#a0826d] hover:text-[#d4a574] hover:scale-110 transition-all duration-200">Projects</a>
+            <a href="#speaking" className="text-[#a0826d] hover:text-[#d4a574] hover:scale-110 transition-all duration-200">Speaking</a>
             <a href="#contact" className="text-[#a0826d] hover:text-[#d4a574] hover:scale-110 transition-all duration-200">Contact</a>
           </div>
         </div>
@@ -87,11 +87,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className={`grid md:grid-cols-[2fr,1fr] gap-12 items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="space-y-6">
-              <h2 className="text-6xl md:text-8xl font-bold text-[#d4a574] animate-fade-in flex items-center gap-4">
-                <Server className="inline-block" size={80} />
+              <h2 className="text-5xl md:text-7xl font-bold text-[#d4a574] animate-fade-in flex items-center gap-4">
+                <Server className="inline-block" size={60} />
                 Ifeoluwa Oluwafemi
               </h2>
-              <h3 className="text-3xl md:text-4xl font-semibold text-[#8b6f47]">Backend Engineer</h3>
+              <h3 className="text-2xl md:text-3xl font-semibold text-[#8b6f47]">Backend Engineer</h3>
               <p className="text-xl md:text-2xl text-[#8b6f47] max-w-2xl flex items-center gap-3">
                 <Cloud className="flex-shrink-0" size={28} />
                 Designing and developing high-volume, low-latency enterprise applications
@@ -114,19 +114,32 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Profile visual */}
+            {/* Profile Image */}
             <div className="hidden md:block">
-              <div className="relative w-64 h-64 mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8b6f47] to-[#d4a574] rounded-2xl animate-pulse-slow"></div>
-                <div className="absolute inset-2 bg-[#1a1512] rounded-2xl flex items-center justify-center">
-                  <Terminal className="text-[#d4a574]" size={100} />
+              <div className="relative w-80 h-80 mx-auto">
+                {/* Animated gradient border */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#8b6f47] via-[#d4a574] to-[#8b6f47] rounded-3xl animate-pulse-slow"></div>
+                <div className="absolute inset-1 bg-[#0a0a0a] rounded-3xl overflow-hidden flex items-center justify-center">
+                  <div className="w-full h-full bg-[#0a0a0a] flex items-center justify-center">
+                    <Image 
+                      src="/profile.jpg" 
+                      alt="Ifeoluwa Oluwafemi" 
+                      width={320} 
+                      height={320}
+                      className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                      priority
+                    />
+                  </div>
                 </div>
-                {/* Floating icons around */}
-                <div className="absolute -top-4 -right-4 bg-[#8b6f47] rounded-full p-3 animate-float">
+                {/* Floating badges */}
+                <div className="absolute -top-4 -right-4 bg-[#8b6f47] rounded-full p-3 animate-float shadow-lg shadow-[#8b6f47]/50">
                   <Database className="text-black" size={24} />
                 </div>
-                <div className="absolute -bottom-4 -left-4 bg-[#d4a574] rounded-full p-3 animate-float" style={{animationDelay: '1.5s'}}>
+                <div className="absolute -bottom-4 -left-4 bg-[#d4a574] rounded-full p-3 animate-float shadow-lg shadow-[#d4a574]/50" style={{animationDelay: '1.5s'}}>
                   <Server className="text-black" size={24} />
+                </div>
+                <div className="absolute top-1/2 -right-4 bg-[#a0826d] rounded-full p-3 animate-float shadow-lg shadow-[#a0826d]/50" style={{animationDelay: '0.8s'}}>
+                  <Code2 className="text-black" size={20} />
                 </div>
               </div>
             </div>
@@ -380,6 +393,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Speaking Section */}
+      <section id="speaking" className="py-20 px-6 bg-[#0d0d0d]">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-3 mb-12">
+            <Mic className="text-[#d4a574]" size={36} />
+            <h3 className="text-4xl font-bold text-[#d4a574]">Speaking</h3>
+          </div>
+          <p className="text-[#a0826d] text-lg mb-12 max-w-3xl">
+            I'm passionate about sharing knowledge and empowering the next generation of developers. 
+            Here are some of my speaking engagements and workshops.
+          </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Video 1 */}
+            <div className="bg-[#1a1512] border border-[#2d2520] rounded-lg overflow-hidden hover:border-[#8b6f47] transition-all duration-300 group">
+              <div className="relative aspect-video bg-black">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/rT3_qBXA9rc"
+                  title="Backend Web Development with Ifeoluwa Oluwafemi"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Video className="text-[#d4a574]" size={20} />
+                  <h4 className="text-xl font-semibold text-[#d4a574]">Backend Web Development</h4>
+                </div>
+                <p className="text-[#a0826d] mb-4">
+                  WTM Ethiopia Workshop - Introduction to Backend Development with Node.js and Express.js
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">⬢ Node.js</span>
+                  <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🔌 Express.js</span>
+                  <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🎓 Workshop</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Video 2 */}
+            <div className="bg-[#1a1512] border border-[#2d2520] rounded-lg overflow-hidden hover:border-[#8b6f47] transition-all duration-300 group">
+              <div className="relative aspect-video bg-black">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/JmpR_rSz0fs"
+                  title="Backend Development Session"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Video className="text-[#d4a574]" size={20} />
+                  <h4 className="text-xl font-semibold text-[#d4a574]">Introduction to Backend</h4>
+                </div>
+                <p className="text-[#a0826d] mb-4">
+                  Women Techmakers Ethiopia - Teaching backend fundamentals and best practices
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">💡 Teaching</span>
+                  <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🎤 Speaking</span>
+                  <span className="px-3 py-1 bg-[#0d0d0d] text-[#8b6f47] rounded text-sm">🌍 WTM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
@@ -473,7 +557,7 @@ export default function Home() {
                     </>
                   ) : (
                     <>
-                      <Send size={20} />
+                      {/*<Send size={20} />*/}
                       Send Message
                     </>
                   )}
