@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Code2, Database, Server, GitBranch, Terminal, Blocks, Mail, Github, Linkedin, Rocket, Shield, Zap, Cloud, CheckCircle, AlertCircle, Video, Mic } from "lucide-react";
+import { Code2, Database, Server, GitBranch, Terminal, Blocks, Mail, Github, Linkedin, Rocket, Shield, Zap, Cloud, Send, CheckCircle, AlertCircle, Video, Mic, Menu as MenuIcon, X } from "lucide-react";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -56,14 +57,68 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <h1 className="text-2xl font-bold text-[#d4a574]">techie.lady()</h1>
           </div>
-          <div className="flex gap-6 text-sm">
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-6 text-sm">
             <a href="#about" className="text-[#a0826d] hover:text-[#d4a574] hover:scale-110 transition-all duration-200">About</a>
             <a href="#experience" className="text-[#a0826d] hover:text-[#d4a574] hover:scale-110 transition-all duration-200">Experience</a>
             <a href="#projects" className="text-[#a0826d] hover:text-[#d4a574] hover:scale-110 transition-all duration-200">Projects</a>
             <a href="#speaking" className="text-[#a0826d] hover:text-[#d4a574] hover:scale-110 transition-all duration-200">Speaking</a>
             <a href="#contact" className="text-[#a0826d] hover:text-[#d4a574] hover:scale-110 transition-all duration-200">Contact</a>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-[#d4a574] hover:text-[#8b6f47] transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={28} /> : <MenuIcon size={28} />}
+          </button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-black/95 border-t border-[#2d2520] animate-fade-in">
+            <div className="px-6 py-4 flex flex-col gap-4">
+              <a 
+                href="#about" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-[#a0826d] hover:text-[#d4a574] transition-colors py-2 border-b border-[#2d2520]"
+              >
+                About
+              </a>
+              <a 
+                href="#experience" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-[#a0826d] hover:text-[#d4a574] transition-colors py-2 border-b border-[#2d2520]"
+              >
+                Experience
+              </a>
+              <a 
+                href="#projects" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-[#a0826d] hover:text-[#d4a574] transition-colors py-2 border-b border-[#2d2520]"
+              >
+                Projects
+              </a>
+              <a 
+                href="#speaking" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-[#a0826d] hover:text-[#d4a574] transition-colors py-2 border-b border-[#2d2520]"
+              >
+                Speaking
+              </a>
+              <a 
+                href="#contact" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-[#a0826d] hover:text-[#d4a574] transition-colors py-2"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -85,30 +140,57 @@ export default function Home() {
         </div>
         
         <div className="max-w-6xl mx-auto relative z-10">
+          {/* Profile Image - Mobile */}
+          <div className="md:hidden mb-12 flex justify-center">
+            <div className="relative w-64 h-64">
+              {/* Animated gradient border */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8b6f47] via-[#d4a574] to-[#8b6f47] rounded-3xl animate-pulse-slow"></div>
+              <div className="absolute inset-1 bg-[#0a0a0a] rounded-3xl overflow-hidden flex items-center justify-center">
+                <div className="w-full h-full bg-[#0a0a0a] flex items-center justify-center">
+                  <Image 
+                    src="/profile.jpg" 
+                    alt="Ifeoluwa Oluwafemi" 
+                    width={256} 
+                    height={256}
+                    className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                    priority
+                  />
+                </div>
+              </div>
+              {/* Floating badges */}
+              <div className="absolute -top-3 -right-3 bg-[#8b6f47] rounded-full p-2 animate-float shadow-lg shadow-[#8b6f47]/50">
+                <Database className="text-black" size={20} />
+              </div>
+              <div className="absolute -bottom-3 -left-3 bg-[#d4a574] rounded-full p-2 animate-float shadow-lg shadow-[#d4a574]/50" style={{animationDelay: '1.5s'}}>
+                <Server className="text-black" size={20} />
+              </div>
+            </div>
+          </div>
+
           <div className={`grid md:grid-cols-[2fr,1fr] gap-12 items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="space-y-6">
-              <h2 className="text-5xl md:text-7xl font-bold text-[#d4a574] animate-fade-in flex items-center gap-4">
-                <Server className="inline-block" size={60} />
-                Ifeoluwa Oluwafemi
+              <h2 className="text-4xl md:text-7xl font-bold text-[#d4a574] animate-fade-in flex flex-wrap items-center gap-3 md:gap-4">
+                <Server className="inline-block" size={50} />
+                <span>Ifeoluwa Oluwafemi</span>
               </h2>
-              <h3 className="text-2xl md:text-3xl font-semibold text-[#8b6f47]">Backend Engineer</h3>
-              <p className="text-xl md:text-2xl text-[#8b6f47] max-w-2xl flex items-center gap-3">
-                <Cloud className="flex-shrink-0" size={28} />
-                Designing and developing high-volume, low-latency enterprise applications
+              <h3 className="text-xl md:text-3xl font-semibold text-[#8b6f47]">Backend Engineer</h3>
+              <p className="text-lg md:text-2xl text-[#8b6f47] max-w-2xl flex items-start gap-3">
+                <Cloud className="flex-shrink-0 mt-1" size={24} />
+                <span>Designing and developing high-volume, low-latency enterprise applications</span>
               </p>
-              <div className="flex gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a 
                   href="#contact" 
-                  className="px-6 py-3 bg-[#8b6f47] text-black font-semibold rounded-lg hover:bg-[#a0826d] hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                  className="px-5 py-3 bg-[#8b6f47] text-black font-semibold rounded-lg hover:bg-[#a0826d] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-sm md:text-base"
                 >
-                  <Mail size={20} />
+                  <Mail size={18} />
                   Get in Touch
                 </a>
                 <a 
                   href="#projects" 
-                  className="px-6 py-3 border border-[#8b6f47] text-[#d4a574] font-semibold rounded-lg hover:bg-[#1a1512] hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                  className="px-5 py-3 border border-[#8b6f47] text-[#d4a574] font-semibold rounded-lg hover:bg-[#1a1512] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-sm md:text-base"
                 >
-                  <Rocket size={20} />
+                  <Rocket size={18} />
                   View Work
                 </a>
               </div>
